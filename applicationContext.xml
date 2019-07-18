@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean class="CollectionAddress" id="address1">
+    <property name="city" value="Karachi"/>
+    <property name="country" value="Pakistan"/>
+    <property name="state" value="Sindh"/>
+</bean>
+
+<bean class="CollectionAddress" id="address2">
+    <property name="city" value="Mirpurkhas"/>
+    <property name="state" value="Sindh"/>
+    <property name="country" value="Pakistan"/>
+</bean>
+
+<bean class="CollectionStudent" id="student">
+    <property name="name" value="Shoaib"/>
+    <property name="rollNo" value="085"/>
+    <property name="classno" value="Second"/>
+    <constructor-arg>
+        <list>
+            <ref bean="address1"/>
+            <ref bean="address2"/>
+        </list>
+    </constructor-arg>
+</bean>
+
+</beans>
